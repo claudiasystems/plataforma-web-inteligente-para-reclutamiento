@@ -14,7 +14,7 @@ import { mockApplications, mockJobs } from '@/utils/mockData';
 
 export default function RecruiterDashboard() {
   const { user } = useAuthStore();
-  const [jobs, setJobs] = useState(mockJobs);
+  const [jobs, _setJobs] = useState(mockJobs);
   const [applications, setApplications] = useState(mockApplications);
   const [isNewJobModalOpen, setIsNewJobModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState<string | null>(null);

@@ -24,7 +24,7 @@ export default function ApplicationCard({
     rejected: <XCircle className="text-red-500" size={20} />,
   };
 
-  // Estilos de estado
+  // Estilos de estadonpm init -y
   const statusStyles = {
     pending: 'bg-yellow-100 text-yellow-800',
     reviewed: 'bg-blue-100 text-blue-800',

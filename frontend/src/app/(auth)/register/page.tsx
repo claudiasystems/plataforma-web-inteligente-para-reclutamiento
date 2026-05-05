@@ -2,7 +2,7 @@
 
 'use client';
 
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { User, Mail, Lock, Briefcase } from 'lucide-react';
@@ -12,7 +12,7 @@ import Button from '@/components/Button';
 import Card from '@/components/Card';
 import { RegisterData } from '@/types';
 
-export default function RegisterPage() {
+function RegisterForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const { register, isLoading } = useAuthStore();
@@ -213,5 +213,13 @@ export default function RegisterPage() {
         </Link>
       </p>
     </div>
+  );
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <RegisterForm />
+    </Suspense>
   );
 }

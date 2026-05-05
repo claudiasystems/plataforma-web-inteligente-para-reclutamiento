@@ -14,7 +14,7 @@ import { mockApplications } from '@/utils/mockData';
 
 export default function CandidateDashboard() {
   const { user } = useAuthStore();
-  const [applications, setApplications] = useState(mockApplications);
+  const [applications, _setApplications] = useState(mockApplications);
   const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [cvFile, setCvFile] = useState<File | null>(null);
 
